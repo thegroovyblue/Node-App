@@ -4,7 +4,7 @@ export const create = async(req, res) => {
     try {
         const { employeeData = new Employee() } = (req.body)
         const { userName } = employeeData
-        const existingEmployee = await Employee.findOne({ userName})
+        const employeeExist = await Employee.findOne({ userName})
 
         if(employeeExist) {
             return res.status(200).json({ error: "Employee with this username already exists" })
