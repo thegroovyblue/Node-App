@@ -14,7 +14,7 @@ dotenv.config()
 const PORT = process.env.PORT || 5000
 const MONGOURI = process.env.MONGO_URI
 
-mongoose.connect(MONGOURI).then( () => {
+mongoose.connect(MONGOURL).then( () => {
     console.log("Database Connected Successfully")
 
     app.listen(PORT, () => {
